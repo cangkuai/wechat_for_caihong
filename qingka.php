@@ -9,6 +9,8 @@ $xc=isset($_GET['xc'])?daddslashes($_GET['xc']):null;
 
 @header('Content-Type: application/json; charset=UTF-8');
 
+if($key!=$conf['apikey'])exit('{"code":-4,"msg":"API对接密钥错误，请在后台设置密钥"}');
+
 
 //以下为彩虹代刷调用接口
 switch($act){
